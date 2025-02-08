@@ -8,7 +8,6 @@ const profile = ref<Profile>({
   skills: [],
   frameWorks: []
 })
-// const profile = ref('')
 const handleProfile = (profileData: Profile) => {
   profile.value = profileData
   console.log(profile.value)
@@ -21,7 +20,7 @@ const handleProfile = (profileData: Profile) => {
       <ProfileForm @updateProfile="handleProfile" />
     </div>
     <div class="right-content">
-      <MarkdownPreview v-bind="profile" />
+      <MarkdownPreview :profile="profile" />
       <!-- <MarkdownPreview
         :userName="profile?.userName"
         :skills="profile?.skills"
