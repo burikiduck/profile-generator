@@ -1,5 +1,5 @@
 type Profile = {
-  userName: string,
-  skills: string[],
+  userName: string
+  skills: string[]
   frameWorks: string[]
 }

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const profile = ref({
   userName: '',
   skills: [],
-  frameWorks: []
+  frameWorks: [],
 } as Profile)
 
 const emit = defineEmits<{
@@ -18,53 +18,65 @@ const handleClick = () => {
 </script>
 <template>
   <div>
-    <div>
+    <div class="mt-4">
       <h3>プロフィール</h3>
-      <hr />
+      <hr class="mb-4" />
       <ul>
         <li>
           <label for="userName">ユーザー名：</label>
-          <input type="text" id="userName" name="userName" placeholder="name" v-model="profile.userName" />
+          <input
+            id="userName"
+            v-model="profile.userName"
+            type="text"
+            name="userName"
+            placeholder="name"
+          />
         </li>
       </ul>
     </div>
-    <div>
+    <div class="mt-4">
       <h3>スキル</h3>
-      <hr />
+      <hr class="mb-4" />
       <ul>
         <li>
-          <input type="checkbox" id="javascript" v-model="profile.skills" value="javascript" />
+          <input id="javascript" v-model="profile.skills" type="checkbox" value="javascript" />
           <label for="javascript">javascript</label>
         </li>
         <li>
-          <input type="checkbox" id="typescript" v-model="profile.skills" value="typescript" />
+          <input id="typescript" v-model="profile.skills" type="checkbox" value="typescript" />
           <label for="typescript">typescript</label>
         </li>
         <li>
-          <input type="checkbox" id="java" v-model="profile.skills" value="java" />
+          <input id="java" v-model="profile.skills" type="checkbox" value="java" />
           <label for="java">java</label>
         </li>
         <li>
-          <input type="checkbox" id="python" v-model="profile.skills" value="python" />
+          <input id="python" v-model="profile.skills" type="checkbox" value="python" />
           <label for="python">python</label>
         </li>
       </ul>
     </div>
-    <div>
+    <div class="my-4">
       <h3>フレームワーク</h3>
-      <hr />
+      <hr class="mb-4" />
       <ul>
         <li>
-          <input type="checkbox" id="vue" v-model="profile.frameWorks" value="vue" />
+          <input id="vue" v-model="profile.frameWorks" type="checkbox" value="Vue" />
           <label for="vue">Vue</label>
         </li>
         <li>
-          <input type="checkbox" id="react" v-model="profile.frameWorks" value="react" />
+          <input id="react" v-model="profile.frameWorks" type="checkbox" value="React" />
           <label for="react">React</label>
         </li>
       </ul>
     </div>
-    <button @click="handleClick()">プロフィールを反映</button>
+    <!-- <button @click="handleClick()">プロフィールを反映</button> -->
+    <button
+      class="cursor-pointer rounded-md bg-violet-700 px-4 py-2 text-white hover:bg-violet-800 sm:px-8 sm:py-3"
+      @click="handleClick()"
+    >
+      プロフィールを反映
+    </button>
   </div>
 </template>
 <style lang="css" scoped>
