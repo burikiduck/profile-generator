@@ -10,17 +10,16 @@ const profile = ref<Profile>({
 })
 const handleProfile = (profileData: Profile) => {
   profile.value = profileData
-  console.log(profile.value)
 }
 </script>
 
 <template>
   <main>
-    <div class="flex">
-      <div class="w-128 flex-1 p-8">
+    <div class="flex flex-row flex-wrap">
+      <div class="basis-1/2 p-8">
         <ProfileForm @update-profile="handleProfile" />
       </div>
-      <div class="w-128 flex-1 p-8">
+      <div class="basis-1/2 p-8">
         <MarkdownPreview :profile="profile" />
         <!-- <MarkdownPreview
           :userName="profile?.userName"

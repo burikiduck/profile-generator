@@ -18,8 +18,8 @@ import { RouterView } from 'vue-router'
     </div>
   </header> -->
 
-  <header class="m-8"><h1>Profie Generator</h1></header>
-  <RouterView />
+  <header class="mx-12 my-4"><h1 class="text-2xl">Profie Generator</h1></header>
+  <RouterView class="mx-4" />
 </template>
 
 <style scoped></style>
